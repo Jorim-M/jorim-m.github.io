@@ -914,7 +914,7 @@ function walk(dt){
   if (keys.has('KeyW')||keys.has('ArrowUp')) f += 1; if (keys.has('KeyS')||keys.has('ArrowDown')) f -= 1;
   if (keys.has('KeyD')||keys.has('ArrowRight')) r += 1; if (keys.has('KeyA')||keys.has('ArrowLeft')) r -= 1;
   let mag = Math.hypot(f, r); if (mag < 0.15){ return 0; } if (mag > 1){ f /= mag; r /= mag; mag = 1; }
-  const speed = isVR() ? 1.85 : (keys.has('ShiftLeft') ? 6.5 : 3.2);
+  const speed = isVR() ? 2.0 : (keys.has('ShiftLeft') ? 6.5 : 3.2);
   const fw = headFwd(), rt = new V(-fw.z, 0, fw.x);
   tryMove((fw.x*f + rt.x*r)*speed*dt, (fw.z*f + rt.z*r)*speed*dt);
   return mag;
